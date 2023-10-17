@@ -1,0 +1,165 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CLOSE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
+    },
+    "COMPILING" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compiling"
+          }
+        }
+      }
+    },
+    "CONFERENCE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conference"
+          }
+        }
+      }
+    },
+    "Jobs" : {
+
+    },
+    "MAP" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map"
+          }
+        }
+      }
+    },
+    "Q_AND_A" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Q&A"
+          }
+        }
+      }
+    },
+    "RELATED" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Related"
+          }
+        }
+      }
+    },
+    "Schedule" : {
+
+    },
+    "SCHEDULE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schedule"
+          }
+        }
+      }
+    },
+    "SLIDO" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slido"
+          }
+        }
+      }
+    },
+    "SPEAKERS" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speakers"
+          }
+        }
+      }
+    },
+    "SPONSOR_LEVEL_PLATINUM" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platinum"
+          }
+        }
+      }
+    },
+    "SPONSOR_LEVEL_SILVER" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silver"
+          }
+        }
+      }
+    },
+    "SPONSORS" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sponsors"
+          }
+        }
+      }
+    },
+    "SYNOPSIS" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synopsis"
+          }
+        }
+      }
+    },
+    "WEB_SITE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Web site"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
