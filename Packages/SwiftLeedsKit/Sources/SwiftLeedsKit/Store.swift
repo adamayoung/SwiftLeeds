@@ -9,9 +9,9 @@ public final class Store<State, Action, Dependencies> {
     public typealias Intercept = (State, Action, Dependencies) async -> Action?
 
     private var state: State
-    private let reduce: Reduce
-    private let intercept: Intercept
-    private let dependencies: Dependencies
+    @ObservationIgnored private let reduce: Reduce
+    @ObservationIgnored private let intercept: Intercept
+    @ObservationIgnored private let dependencies: Dependencies
 
     public init(
         state: State,
@@ -29,6 +29,7 @@ public final class Store<State, Action, Dependencies> {
         state[keyPath: keyPath]
     }
 
+    @MainActor
     public func send(_ action: Action) async {
         state = reduce(state, action)
 
