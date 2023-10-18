@@ -263,8 +263,7 @@
 		666A077F2ADEFAAE009EF5FA /* Sponsors */ = {
 			isa = PBXGroup;
 			children = (
-				666A07812ADEFACD009EF5FA /* SponsorCard.swift */,
-				666A07802ADEFACD009EF5FA /* SponsorsView.swift */,
+				66A345DB2AE05FF400CAAAD8 /* Sponsors */,
 			);
 			path = Sponsors;
 			sourceTree = "<group>";
@@ -272,8 +271,7 @@
 		666A07842ADEFAF2009EF5FA /* PointsOfInterest */ = {
 			isa = PBXGroup;
 			children = (
-				663CC62E2ADF418300E778A9 /* PointsOfInterestMapView.swift */,
-				666A07852ADEFB07009EF5FA /* PointOfInterestSheet.swift */,
+				66A345DA2AE05FEC00CAAAD8 /* Map */,
 			);
 			path = PointsOfInterest;
 			sourceTree = "<group>";
@@ -308,10 +306,36 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		AFFBDEEA2AE01216003AA694 /* Browse */ = {
+		66A345DA2AE05FEC00CAAAD8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				663CC62E2ADF418300E778A9 /* PointsOfInterestMapView.swift */,
+				666A07852ADEFB07009EF5FA /* PointOfInterestSheet.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		66A345DB2AE05FF400CAAAD8 /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				666A07812ADEFACD009EF5FA /* SponsorCard.swift */,
+				666A07802ADEFACD009EF5FA /* SponsorsView.swift */,
+			);
+			path = Sponsors;
+			sourceTree = "<group>";
+		};
+		66A345DC2AE0600300CAAAD8 /* Browse */ = {
 			isa = PBXGroup;
 			children = (
 				AFFBDEEB2AE01229003AA694 /* BrowseView.swift */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		AFFBDEEA2AE01216003AA694 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				66A345DC2AE0600300CAAAD8 /* Browse */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -597,6 +621,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 			};
 			name = Debug;
 		};
@@ -652,6 +677,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 			};
 			name = Release;
 		};

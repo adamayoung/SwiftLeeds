@@ -67,6 +67,17 @@
         }
       }
     },
+    "PREVIOUS_CONFERENCES" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous Conferences"
+          }
+        }
+      }
+    },
     "Q_AND_A" : {
       "extractionState" : "manual",
       "localizations" : {

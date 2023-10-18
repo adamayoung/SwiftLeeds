@@ -10,11 +10,13 @@
   ],
   "defaultOptions" : {
     "language" : "en-GB",
+    "region" : "GB",
     "targetForVariableExpansion" : {
       "containerPath" : "container:SwiftLeeds.xcodeproj",
       "identifier" : "6648698A2AD6BC9E00AA1F58",
       "name" : "SwiftLeeds"
-    }
+    },
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {

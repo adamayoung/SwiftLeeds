@@ -3,12 +3,10 @@ import SwiftUI
 
 struct AppTabView: View {
 
+    var currentConference: Conference
+
     @Environment(SwiftLeedsStore.self) private var store
     @AppStorage("selectedTab") private var selectedTab: Tab = .conference
-
-    private var currentConference: Conference? {
-        store.conferences.current
-    }
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -36,7 +34,7 @@ struct AppTabView: View {
                     }
             }
             .tabItem {
-                Label("SPEAKERS", systemImage: "rectangle.3.group.bubble.fill")
+                Label("SPEAKERS", systemImage: "person.bubble")
             }
             .tag(Tab.speakers)
 
@@ -94,7 +92,7 @@ extension AppTabView {
     let store = SwiftLeedsStore.preview
 
     return NavigationStack {
-        AppTabView()
+        AppTabView(currentConference: .preview)
             .environment(store)
     }
 }

@@ -3,15 +3,11 @@ import SwiftUI
 
 struct ScheduleView: View {
 
-    var conference: Conference?
+    var conference: Conference
 
     @Environment(SwiftLeedsStore.self) private var store
 
     private var timeSlots: [TimeSlot] {
-        guard let conference else {
-            return []
-        }
-
         guard let schedule = store.schedules.schedules[conference.id] else {
             return []
         }
@@ -33,10 +29,6 @@ struct ScheduleView: View {
     }
 
     private func refreshData() async {
-        guard let conference else {
-            return
-        }
-
         await store.send(.schedules(.fetchSchedule(conferenceID: conference.id)))
     }
 
