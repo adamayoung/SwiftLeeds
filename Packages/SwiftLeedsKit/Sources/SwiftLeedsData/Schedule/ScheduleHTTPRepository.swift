@@ -23,7 +23,7 @@ public final class ScheduleHTTPRepository: ScheduleRepository {
     }
 
     public func schedule(forEvent eventID: UUID?) async throws -> ScheduleDataModel {
-        var baseURL = Self.scheduleURL
+        let baseURL = Self.scheduleURL
         guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else {
             throw ScheduleRepositoryError.unknown()
         }
