@@ -19,28 +19,14 @@ env:
 jobs:
   build-and-test:
     name: Build and Test
-    runs-on: macos-14
+    runs-on: macos-13
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Build
-        run: |
-          cd Packages/SwiftLeedsKit
-          swift build -Xswiftc -warnings-as-errors --build-tests
+        run: set -o pipefail && xcodebuild build-for-testing -scheme SwiftLeeds -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' | xcpretty
 
       - name: Test
-        run: |
-          cd Packages/SwiftLeedsKit
-          swift test --skip-build --parallel
-
-      # - name: Boot simulator
-      #   run: |
-      #     open -a Simulator --args -CurrentDeviceUDID $(xcrun simctl list --json | ruby -e "require 'json'; puts JSON.parse(ARGF.read)['devices']['iOS 17.0'].find { |s| s['name'] == 'iPhone 15' }['udid']")
-
-      # - name: Build
-      #   run: set -o pipefail && xcodebuild build-for-testing -scheme SwiftLeeds -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' | xcpretty
-
-      # - name: Test
-      #   run: set -o pipefail && xcodebuild test-without-building -scheme SwiftLeeds -testPlan SwiftLeeds -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' | xcpretty
+        run: set -o pipefail && xcodebuild test-without-building -scheme SwiftLeeds -testPlan SwiftLeeds -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' | xcpretty
   
