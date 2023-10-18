@@ -7,11 +7,8 @@ public func conferenceReducer(state: ConferenceState, action: ConferenceAction) 
     case .setCurrentConference(let conference):
         state.current = conference
 
-    case .setCurrentSchedule(let schedule):
-        state.schedule = schedule
-
-    case .setSpeakers(let speakers):
-        state.speakers = speakers
+    case .setConferences(let conferences):
+        state.all = conferences
 
     default:
         break

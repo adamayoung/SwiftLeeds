@@ -1,0 +1,228 @@
+{
+    "data": [
+        {
+            "symbolName": "building.2.fill",
+            "name": "SwiftLeeds",
+            "id": "D5B5B6C9-D1BF-4B33-B77D-29C5C1DDB560",
+            "locations": [
+                {
+                    "id": "85C117E9-DFBD-4249-9639-83E9B1A343E4",
+                    "url": "https://leedsplayhouse.org.uk",
+                    "lon": -1.535243,
+                    "name": "Playhouse Theatre",
+                    "lat": 53.798228
+                }
+            ]
+        },
+        {
+            "symbolName": "laptopcomputer",
+            "name": "Places to Work",
+            "id": "0E46F4B7-0844-4C5B-8457-16A8C966BF58",
+            "locations": [
+                {
+                    "name": "Avenue HQ",
+                    "lon": -1.548977202363078,
+                    "lat": 53.79885392247382,
+                    "url": "https://www.avenue-hq.com/",
+                    "id": "823B754C-D551-4234-BAF1-9AE444FDC5F5"
+                },
+                {
+                    "name": "Park House by Spacemade",
+                    "lon": -1.5527801945845137,
+                    "lat": 53.798857519062445,
+                    "url": "https://www.spacemade.co/locations/london/park-house/",
+                    "id": "F506EC86-C363-447E-8775-86627D76BE86"
+                },
+                {
+                    "name": "Wizu Workspace",
+                    "lon": -1.5401714417101833,
+                    "lat": 53.799173655248964,
+                    "url": "http://www.wizuworkspace.com/the-leeming-building",
+                    "id": "8B423641-3D9B-45C5-B785-0187EAA401A1"
+                },
+                {
+                    "name": "Duke Studios",
+                    "lon": -1.538100284323885,
+                    "lat": 53.7913022408058,
+                    "url": "http://www.duke-studios.com/",
+                    "id": "E1A700DB-8872-4E12-8B88-4A1322D4FC73"
+                }
+            ]
+        },
+        {
+            "symbolName": "theatermasks.fill",
+            "name": "Things to do",
+            "id": "3087653E-E10E-41C8-B321-D16A68FA9A88",
+            "locations": [
+                {
+                    "url": "http://www.victorialeeds.co.uk/",
+                    "id": "B24A7C31-ED7F-4B53-9D21-DBD15C3F4D7F",
+                    "name": "Victoria Leeds",
+                    "lat": 53.79818232029677,
+                    "lon": -1.5405197760056504
+                },
+                {
+                    "url": "http://www.trinityleeds.com/",
+                    "id": "85843A21-D18F-4261-A52B-C59D7098316F",
+                    "name": "Trinity Leeds",
+                    "lat": 53.79679603071404,
+                    "lon": -1.5440971686466118
+                },
+                {
+                    "url": "https://www.apple.com/uk/retail/trinityleeds/?cid=aos-gb-seo-maps",
+                    "id": "E97D70F7-2124-4ACA-868C-54C8DDEC7E81",
+                    "name": "Apple",
+                    "lat": 53.79685991942918,
+                    "lon": -1.543359837957889
+                },
+                {
+                    "url": "https://museumsandgalleries.leeds.gov.uk/leeds-art-gallery/",
+                    "id": "53ACDB93-5415-48DD-B34D-54288098D363",
+                    "name": "Leeds Art Gallery",
+                    "lat": 53.800223537676416,
+                    "lon": -1.5478176533022505
+                },
+                {
+                    "url": "https://royalarmouries.org/visit-us/leeds",
+                    "id": "AAE02CAE-15C2-43DA-9282-4CA89F6AADD1",
+                    "name": "Royal Armouries",
+                    "lat": 53.791989038708735,
+                    "lon": -1.531337542186456
+                }
+            ]
+        },
+        {
+            "symbolName": "takeoutbag.and.cup.and.straw.fill",
+            "name": "Food",
+            "id": "3078D29D-CD3C-4BE6-BA3A-AE3ED0901335",
+            "locations": [
+                {
+                    "name": "Trinity Kitchen",
+                    "url": "https://trinityleeds.com/shops/trinity-kitchen",
+                    "lat": 53.797378,
+                    "id": "AC471E53-C120-4FE2-8965-1D6585D20E78",
+                    "lon": -1.545209
+                },
+                {
+                    "name": "Stuzzi",
+                    "url": "http://www.stuzzi.co.uk/",
+                    "lat": 53.80046608786117,
+                    "id": "E81D3F01-E326-473D-A757-1703B0A41797",
+                    "lon": -1.539799428835741
+                },
+                {
+                    "name": "House of Fu",
+                    "url": "http://www.hellohouseoffu.com/",
+                    "lat": 53.7990542317147,
+                    "id": "D9C13011-7147-4D51-A6D3-C087EB5B1E1F",
+                    "lon": -1.5409765306859269
+                },
+                {
+                    "name": "Tattu",
+                    "url": "http://tattu.co.uk/leeds/",
+                    "lat": 53.79824212814524,
+                    "id": "8C02AF4A-0466-4A5A-9CCB-2CAF7F08BCBF",
+                    "lon": -1.54885001971015
+                },
+                {
+                    "name": "Pizza Fella",
+                    "url": "https://www.pizzafella.com/menu",
+                    "lat": 53.799904427924844,
+                    "id": "4B093B5E-24D5-4A18-826B-D9B5DB30AAA2",
+                    "lon": -1.5386023102900523
+                },
+                {
+                    "name": "Belgrave",
+                    "url": "http://www.belgravemusichall.com/",
+                    "lat": 53.80099082308206,
+                    "id": "1E2122C3-3D8A-4AEC-831A-54D113FEAACE",
+                    "lon": -1.5407517502542225
+                }
+            ]
+        },
+        {
+            "symbolName": "wineglass.fill",
+            "name": "Drinking Spots",
+            "id": "3327F9D0-B38B-4743-8EE0-F3188ABA60D7",
+            "locations": [
+                {
+                    "id": "FF2BE354-BF17-4883-9EAA-B8AFC0D13E05",
+                    "url": "https://www.brewsociety.co.uk/",
+                    "lat": 53.79584058588689,
+                    "name": "Brew Society",
+                    "lon": -1.550339186509128
+                },
+                {
+                    "id": "6317BB63-2742-4D74-8713-AD9E7ED9F654",
+                    "url": "https://thealchemist.uk.com/menus/",
+                    "lat": 53.798701696550935,
+                    "name": "The Alchemist",
+                    "lon": -1.5479613581811973
+                },
+                {
+                    "id": "7B8A4BBD-B8CE-4171-8289-651AD9D1B00A",
+                    "url": "https://www.brewdog.com/uk/bars/uk/brewdog-north-street-leeds",
+                    "lat": 53.80187943492715,
+                    "name": "Brew Dog",
+                    "lon": -1.5379835403514934
+                },
+                {
+                    "lon": -1.5485263386179835,
+                    "lat": 53.80082340535508,
+                    "id": "4967F863-4941-4E47-8034-C81C6557CC9E",
+                    "name": "Assembly Underground",
+                    "url": "http://www.assemblyunderground.com/"
+                },
+                {
+                    "lon": -1.5471689293777409,
+                    "lat": 53.79843036094402,
+                    "id": "4064F003-4044-4F12-B48D-12C938CDB290",
+                    "name": "The Lost & Found",
+                    "url": "http://www.the-lostandfound.co.uk/restaurant/leeds-greek-street"
+                },
+                {
+                    "lon": -1.5486636084718148,
+                    "lat": 53.79835740292875,
+                    "id": "C584D44E-C7E7-4649-8FC4-BCB775A20427",
+                    "name": "Manahatta",
+                    "url": "https://www.manahatta.co.uk/bars/greek-street"
+                }
+            ]
+        },
+        {
+            "symbolName": "cup.and.saucer.fill",
+            "name": "Coffee",
+            "id": "DD19C880-1723-4AF2-8005-B4CEFFCBD6E2",
+            "locations": [
+                {
+                    "id": "72BA7E4D-8892-4D75-9BBE-DB20C7AA0797",
+                    "lon": -1.5450768520447067,
+                    "url": "http://www.laynesespresso.co.uk/",
+                    "name": "Laynes Espresso",
+                    "lat": 53.79532138579969
+                },
+                {
+                    "id": "A165FDEF-0B48-475F-B66F-445563D90BCA",
+                    "lon": -1.5314760279758834,
+                    "url": "https://www.northstarroast.com/cafe/",
+                    "name": "North Star",
+                    "lat": 53.79391081831077
+                },
+                {
+                    "id": "09A8DDAC-7DCA-4F99-80BA-66750571CBF9",
+                    "lon": -1.5459528678505592,
+                    "url": "http://www.200degs.com/leeds-bond-street",
+                    "name": "200 Degrees",
+                    "lat": 53.79760107211073
+                },
+                {
+                    "id": "C15B4231-6B85-4C4B-88F3-8161F71C37BD",
+                    "lon": -1.5427554652058615,
+                    "url": "https://www.kapowcoffee.co.uk/",
+                    "name": "Kapow",
+                    "lat": 53.798800736285486
+                }
+            ]
+        }
+    ]
+}

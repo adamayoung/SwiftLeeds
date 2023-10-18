@@ -3,12 +3,15 @@ import SwiftUI
 
 struct AppTabView: View {
 
+    var currentConference: Conference
+
+    @Environment(SwiftLeedsStore.self) private var store
     @AppStorage("selectedTab") private var selectedTab: Tab = .conference
 
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack {
-                ScheduleView()
+                ScheduleView(conference: currentConference)
                     .navigationDestination(for: Presentation.self) { presentation in
                         PresentationView(presentation: presentation)
                     }
@@ -25,13 +28,13 @@ struct AppTabView: View {
             .tag(Tab.conference)
 
             NavigationStack {
-                SpeakersView()
+                SpeakersView(conference: currentConference)
                     .navigationDestination(for: Speaker.self) { speaker in
                         SpeakerView(speaker: speaker)
                     }
             }
             .tabItem {
-                Label("SPEAKERS", systemImage: "rectangle.3.group.bubble.fill")
+                Label("SPEAKERS", systemImage: "person.bubble")
             }
             .tag(Tab.speakers)
 
@@ -48,6 +51,26 @@ struct AppTabView: View {
                 Label("SPONSORS", systemImage: "wand.and.stars")
             }
             .tag(Tab.sponsors)
+
+            NavigationStack {
+                BrowseView()
+                    .navigationDestination(for: Conference.self) { conference in
+                        ScheduleView(conference: conference)
+                    }
+                    .navigationDestination(for: Presentation.self) { presentation in
+                        PresentationView(presentation: presentation)
+                    }
+                    .navigationDestination(for: Activity.self) { activity in
+                        ActivityView(activity: activity)
+                    }
+                    .navigationDestination(for: Speaker.self) { speaker in
+                        SpeakerView(speaker: speaker)
+                    }
+            }
+            .tabItem {
+                Label("BROWSE", systemImage: "square.stack.fill")
+            }
+            .tag(Tab.browse)
         }
     }
 
@@ -60,6 +83,7 @@ extension AppTabView {
         case speakers
         case map
         case sponsors
+        case browse
     }
 
 }
@@ -68,7 +92,7 @@ extension AppTabView {
     let store = SwiftLeedsStore.preview
 
     return NavigationStack {
-        AppTabView()
+        AppTabView(currentConference: .preview)
             .environment(store)
     }
 }

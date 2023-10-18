@@ -5,32 +5,40 @@ import SwiftUI
 struct ContentView: View {
 
     @Environment(SwiftLeedsStore.self) private var store
-    @AppStorage("selectedPanel") private var selection: Panel = Panel.conference
+
+    #if os(macOS)
+    @State private var selection: Panel = .conference
+    #endif
 
     private var isReady: Bool {
-        store.conferences.current != nil
+        store.isReady
+    }
+
+    private var currentConference: Conference? {
+        store.conferences.current
     }
 
     var body: some View {
-        if isReady {
-            content
+        if let currentConference, isReady {
+            content(currentConference: currentConference)
         } else {
             loadingView
         }
     }
 
-    private var content: some View {
+    @ViewBuilder
+    private func content(currentConference: Conference) -> some View {
         #if os(macOS)
             NavigationSplitView {
-                Sidebar(selection: $selection)
+                Sidebar(selection: $selection, currentConference: currentConference)
             } detail: {
                 NavigationStack {
-                    DetailColumn(selection: $selection)
+                    DetailColumn(selection: $selection, currentConference: currentConference)
                 }
             }
             .frame(minWidth: 600, minHeight: 450)
         #else
-            AppTabView()
+            AppTabView(currentConference: currentConference)
         #endif
     }
 

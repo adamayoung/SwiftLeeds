@@ -1,15 +1,19 @@
 import SwiftLeedsKit
 import SwiftUI
 
+#if os(macOS)
 struct DetailColumn: View {
 
     @Binding var selection: Panel
+    var currentConference: Conference
+
+    @Environment(SwiftLeedsStore.self) private var store
 
     var body: some View {
         switch selection {
         case .conference:
             NavigationStack {
-                ScheduleView()
+                ScheduleView(conference: currentConference)
                     .navigationDestination(for: Presentation.self) { presentation in
                         PresentationView(presentation: presentation)
                     }
@@ -23,7 +27,7 @@ struct DetailColumn: View {
 
         case .speakers:
             NavigationStack {
-                SpeakersView()
+                SpeakersView(conference: currentConference)
                     .navigationDestination(for: Speaker.self) { speaker in
                         SpeakerView(speaker: speaker)
                     }
@@ -36,7 +40,23 @@ struct DetailColumn: View {
             NavigationStack {
                 SponsorsView()
             }
+
+        case .pastConference(let conference):
+            NavigationStack {
+                ScheduleView(conference: conference)
+                    .navigationDestination(for: Presentation.self) { presentation in
+                        PresentationView(presentation: presentation)
+                    }
+                    .navigationDestination(for: Activity.self) { activity in
+                        ActivityView(activity: activity)
+                    }
+                    .navigationDestination(for: Speaker.self) { speaker in
+                        SpeakerView(speaker: speaker)
+                    }
+            }
+            .id(conference.id)
         }
     }
 
 }
+#endif

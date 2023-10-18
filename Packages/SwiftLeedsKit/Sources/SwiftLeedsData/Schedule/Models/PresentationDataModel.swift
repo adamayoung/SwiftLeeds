@@ -6,14 +6,14 @@ public struct PresentationDataModel: Decodable {
     public let title: String
     public let synopsis: String
     public let speakers: [SpeakerDataModel]
-    public let slidoURL: URL
+    public let slidoURL: String
 
     public init(
         id: UUID,
         title: String,
         synopsis: String,
         speakers: [SpeakerDataModel],
-        slidoURL: URL
+        slidoURL: String
     ) {
         self.id = id
         self.title = title

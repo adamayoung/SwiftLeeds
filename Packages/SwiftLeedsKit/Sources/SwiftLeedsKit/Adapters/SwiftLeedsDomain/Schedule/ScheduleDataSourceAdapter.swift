@@ -16,7 +16,7 @@ final class ScheduleDataSourceAdapter: ScheduleDataSource {
     }
 
     func schedule(forConference conferenceID: UUID) async throws -> SwiftLeedsDomain.Schedule {
-        let scheduleDataModel = try await scheduleRepository.schedule()
+        let scheduleDataModel = try await scheduleRepository.schedule(forEvent: conferenceID)
         let event = scheduleDataModel.event
         let slotDataModels = scheduleDataModel.slots
 

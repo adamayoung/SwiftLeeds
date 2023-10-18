@@ -34,8 +34,8 @@ struct PresentationView: View {
                     .listRowSeparator(.hidden)
             }
 
-            Section("RELATED") {
-                if let slidoURL = presentation.slidoURL {
+            if let slidoURL = presentation.slidoURL {
+                Section("RELATED") {
                     PresentationSlidoRow(slidoURL: slidoURL)
                         .listRowSeparator(.hidden)
                 }

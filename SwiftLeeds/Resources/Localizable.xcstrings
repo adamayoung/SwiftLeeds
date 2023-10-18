@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "BROWSE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse"
+          }
+        }
+      }
+    },
     "CLOSE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -34,8 +45,16 @@
         }
       }
     },
-    "Jobs" : {
-
+    "JOBS" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jobs"
+          }
+        }
+      }
     },
     "MAP" : {
       "extractionState" : "manual",
@@ -44,6 +63,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Map"
+          }
+        }
+      }
+    },
+    "PREVIOUS_CONFERENCES" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous Conferences"
           }
         }
       }
@@ -68,9 +98,6 @@
           }
         }
       }
-    },
-    "Schedule" : {
-
     },
     "SCHEDULE" : {
       "extractionState" : "manual",

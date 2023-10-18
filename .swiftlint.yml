@@ -1,5 +1,5 @@
 excluded:
-  - .build
+  - "**/.build"
 
 opt_in_rules:
   - attributes

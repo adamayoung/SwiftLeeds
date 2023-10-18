@@ -31,7 +31,14 @@ extension SwiftLeedsStore {
 
     public static var preview: SwiftLeedsStore {
         .init(
-            state: .preview
+            state: .preview,
+            reduce: { state, _ in
+                state
+            },
+            intercept: { _, _, _ in
+                nil
+            },
+            dependencies: SwiftLeedsLiveDependencies()
         )
     }
 

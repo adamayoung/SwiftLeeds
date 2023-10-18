@@ -38,6 +38,7 @@
 		66A2B9162AD8A0B00072DCE1 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2B9152AD8A0B00072DCE1 /* Panel.swift */; };
 		66A2B9182AD8A1130072DCE1 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2B9172AD8A1130072DCE1 /* Sidebar.swift */; };
 		66A2B91A2AD8A1790072DCE1 /* DetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2B9192AD8A1790072DCE1 /* DetailColumn.swift */; };
+		AFFBDEEC2AE01229003AA694 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFBDEEB2AE01229003AA694 /* BrowseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		66A2B9152AD8A0B00072DCE1 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		66A2B9172AD8A1130072DCE1 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		66A2B9192AD8A1790072DCE1 /* DetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailColumn.swift; sourceTree = "<group>"; };
+		AFFBDEEB2AE01229003AA694 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,11 +160,11 @@
 			isa = PBXGroup;
 			children = (
 				6648698E2AD6BC9E00AA1F58 /* SwiftLeedsApp.swift */,
-				664869902AD6BC9E00AA1F58 /* ContentView.swift */,
 				664869C02AD713A400AA1F58 /* Conference */,
 				664869CC2AD72E1C00AA1F58 /* Speakers */,
 				666A07842ADEFAF2009EF5FA /* PointsOfInterest */,
 				666A077F2ADEFAAE009EF5FA /* Sponsors */,
+				AFFBDEEA2AE01216003AA694 /* Browse */,
 				664869D72AD755A900AA1F58 /* Navigation */,
 				663B3B772AD991AB00718505 /* Resources */,
 				664869962AD6BC9F00AA1F58 /* SwiftLeeds.entitlements */,
@@ -233,10 +235,9 @@
 		664869D72AD755A900AA1F58 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				664869D82AD755C000AA1F58 /* AppTabView.swift */,
-				66A2B9152AD8A0B00072DCE1 /* Panel.swift */,
-				66A2B9172AD8A1130072DCE1 /* Sidebar.swift */,
-				66A2B9192AD8A1790072DCE1 /* DetailColumn.swift */,
+				664869902AD6BC9E00AA1F58 /* ContentView.swift */,
+				AFFBDEED2AE01239003AA694 /* iOS */,
+				AFFBDEEE2AE0123F003AA694 /* macOS */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -262,8 +263,7 @@
 		666A077F2ADEFAAE009EF5FA /* Sponsors */ = {
 			isa = PBXGroup;
 			children = (
-				666A07812ADEFACD009EF5FA /* SponsorCard.swift */,
-				666A07802ADEFACD009EF5FA /* SponsorsView.swift */,
+				66A345DB2AE05FF400CAAAD8 /* Sponsors */,
 			);
 			path = Sponsors;
 			sourceTree = "<group>";
@@ -271,8 +271,7 @@
 		666A07842ADEFAF2009EF5FA /* PointsOfInterest */ = {
 			isa = PBXGroup;
 			children = (
-				663CC62E2ADF418300E778A9 /* PointsOfInterestMapView.swift */,
-				666A07852ADEFB07009EF5FA /* PointOfInterestSheet.swift */,
+				66A345DA2AE05FEC00CAAAD8 /* Map */,
 			);
 			path = PointsOfInterest;
 			sourceTree = "<group>";
@@ -307,6 +306,58 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		66A345DA2AE05FEC00CAAAD8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				663CC62E2ADF418300E778A9 /* PointsOfInterestMapView.swift */,
+				666A07852ADEFB07009EF5FA /* PointOfInterestSheet.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		66A345DB2AE05FF400CAAAD8 /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				666A07812ADEFACD009EF5FA /* SponsorCard.swift */,
+				666A07802ADEFACD009EF5FA /* SponsorsView.swift */,
+			);
+			path = Sponsors;
+			sourceTree = "<group>";
+		};
+		66A345DC2AE0600300CAAAD8 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				AFFBDEEB2AE01229003AA694 /* BrowseView.swift */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		AFFBDEEA2AE01216003AA694 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				66A345DC2AE0600300CAAAD8 /* Browse */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		AFFBDEED2AE01239003AA694 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				664869D82AD755C000AA1F58 /* AppTabView.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		AFFBDEEE2AE0123F003AA694 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				66A2B9152AD8A0B00072DCE1 /* Panel.swift */,
+				66A2B9172AD8A1130072DCE1 /* Sidebar.swift */,
+				66A2B9192AD8A1790072DCE1 /* DetailColumn.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +372,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				66A345D92AE05E3C00CAAAD8 /* PBXTargetDependency */,
 			);
 			name = SwiftLeeds;
 			packageProductDependencies = (
@@ -461,6 +513,7 @@
 				666A07822ADEFACD009EF5FA /* SponsorsView.swift in Sources */,
 				664869D92AD755C000AA1F58 /* AppTabView.swift in Sources */,
 				66A2B91A2AD8A1790072DCE1 /* DetailColumn.swift in Sources */,
+				AFFBDEEC2AE01229003AA694 /* BrowseView.swift in Sources */,
 				666A079B2ADEFB4F009EF5FA /* ActivityView.swift in Sources */,
 				664869CE2AD72E3000AA1F58 /* SpeakersView.swift in Sources */,
 				664869D62AD74E4300AA1F58 /* SpeakerView.swift in Sources */,
@@ -500,6 +553,10 @@
 			isa = PBXTargetDependency;
 			target = 6648698A2AD6BC9E00AA1F58 /* SwiftLeeds */;
 			targetProxy = 664869A92AD6BC9F00AA1F58 /* PBXContainerItemProxy */;
+		};
+		66A345D92AE05E3C00CAAAD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 66A345D82AE05E3C00CAAAD8 /* SwiftLeedsKit */;
 		};
 /* End PBXTargetDependency section */
 
@@ -564,6 +621,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 			};
 			name = Debug;
 		};
@@ -619,6 +677,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 			};
 			name = Release;
 		};
@@ -849,6 +908,10 @@
 			productName = NukeUI;
 		};
 		66A2B9132AD8849D0072DCE1 /* SwiftLeedsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftLeedsKit;
+		};
+		66A345D82AE05E3C00CAAAD8 /* SwiftLeedsKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftLeedsKit;
 		};

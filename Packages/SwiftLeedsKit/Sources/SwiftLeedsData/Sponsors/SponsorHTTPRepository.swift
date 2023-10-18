@@ -19,9 +19,19 @@ public final class SponsorHTTPRepository: SponsorRepository {
     }
 
     public func sponsors() async throws -> [SponsorDataModel] {
-        let data = try await httpClient.get(url: Self.sponsorsURL)
+        let data: Data
+        do {
+            data = try await httpClient.get(url: Self.sponsorsURL)
+        } catch let error {
+            throw SponsorRepositoryError(error: error)
+        }
 
-        let response = try decoder.decode(SponsorsResponse.self, from: data)
+        let response: SponsorsResponse
+        do {
+            response = try decoder.decode(SponsorsResponse.self, from: data)
+        } catch let error {
+            throw SponsorRepositoryError.decode(error)
+        }
 
         return response.data
     }

@@ -1,4 +1,5 @@
 import Foundation
+import Networking
 import SwiftLeedsData
 import SwiftLeedsDomain
 
@@ -17,6 +18,10 @@ extension SwiftLeedsLiveDependencies {
     func fetchCurrentConferenceUseCase() -> FetchCurrentConferenceUseCase {
         FetchCurrentConference(conferenceDataSource: conferenceDataSource())
     }
+
+}
+
+extension SwiftLeedsLiveDependencies {
 
     func fetchScheduleUseCase() -> FetchScheduleUseCase {
         FetchSchedule(scheduleDataSource: scheduleDataSource())
@@ -108,27 +113,49 @@ extension SwiftLeedsLiveDependencies {
 extension SwiftLeedsLiveDependencies {
 
     private func scheduleRepository() -> some ScheduleRepository {
-        ScheduleHTTPRepository(httpClient: httpClient)
+        ScheduleHTTPRepository(httpClient: httpClientAdapter)
     }
 
     private func sponsorRepository() -> some SponsorRepository {
-        SponsorHTTPRepository(httpClient: httpClient)
+        SponsorHTTPRepository(httpClient: httpClientAdapter)
     }
 
     private func locationRepository() -> some LocationRepository {
-        LocationHTTPRepository(httpClient: httpClient)
+        LocationHTTPRepository(httpClient: httpClientAdapter)
     }
 
 }
 
 extension SwiftLeedsLiveDependencies {
 
-    private var httpClient: some HTTPClient {
+    private var httpClientAdapter: some SwiftLeedsData.HTTPClient {
+        HTTPClientAdapter(httpClient: httpClient)
+    }
+
+    private var httpClient: some Networking.HTTPClient {
         HTTPURLSessionClient(urlSession: Self.urlSession)
     }
 
-    private static let urlSession: URLSession = {
-        .shared
-    }()
+    private static let urlSession = URLSession(configuration: urlSessionConfiguration)
+
+    private static var urlSessionConfiguration: URLSessionConfiguration {
+        let configuration = URLSessionConfiguration.default
+        #if os(iOS)
+            configuration.multipathServiceType = .handover
+        #endif
+
+        configuration.requestCachePolicy = .returnCacheDataElseLoad
+        configuration.timeoutIntervalForRequest = 30
+        configuration.waitsForConnectivity = true
+        configuration.urlCache = urlCache
+
+        return configuration
+    }
+
+    #if !canImport(FoundationNetworking)
+    private static var urlCache: URLCache {
+        URLCache(memoryCapacity: 50_000_000, diskCapacity: 1_000_000_000)
+    }
+    #endif
 
 }

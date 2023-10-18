@@ -17,33 +17,15 @@ func conferenceInterceptor(
 
         return .setCurrentConference(conference)
 
-    case .fetchCurrentSchedule:
-        guard let conferenceID = state.current?.id else {
+    case .fetchConferences:
+        let useCase = dependencies.fetchConferencesUseCase()
+        guard let conferenceModels = try? await useCase.execute() else {
             return nil
         }
 
-        let useCase = dependencies.fetchScheduleUseCase()
-        guard
-            let scheduleModel = try? await useCase.execute(conferenceID: conferenceID),
-            let schedule = Schedule(schedule: scheduleModel)
-        else {
-            return nil
-        }
+        let conferences = conferenceModels.compactMap(Conference.init)
 
-        return .setCurrentSchedule(schedule)
-
-    case .fetchSpeakers:
-        guard let conferenceID = state.current?.id else {
-            return nil
-        }
-
-        let useCase = dependencies.fetchSpeakersUseCase()
-        guard let speakerModels = try? await useCase.execute(conferenceID: conferenceID) else {
-            return nil
-        }
-
-        let speakers = speakerModels.map(Speaker.init)
-        return .setSpeakers(speakers)
+        return .setConferences(conferences)
 
     default:
         break
