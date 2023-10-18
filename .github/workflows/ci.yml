@@ -25,12 +25,15 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Build
-        run: swift build -Xswiftc -warnings-as-errors --build-tests
-        working-directory: Packages/SwiftLeedsKit
+        run: |
+          cd Packages/SwiftLeedsKit
+          swift build -Xswiftc -warnings-as-errors --build-tests
 
       - name: Test
-        run: swift test --skip-build --parallel
-        working-directory: Packages/SwiftLeedsKit
+        run: |
+          cd Packages/SwiftLeedsKit
+          swift test --skip-build --parallel
+        
 
       # - name: Boot simulator
       #   run: |
