@@ -33,7 +33,7 @@ public final class ScheduleHTTPRepository: ScheduleRepository {
             queryItems.append(URLQueryItem(name: "event", value: eventID.uuidString))
         }
         urlComponents.queryItems = queryItems
-        
+
         guard let url = urlComponents.url else {
             throw ScheduleRepositoryError.unknown()
         }

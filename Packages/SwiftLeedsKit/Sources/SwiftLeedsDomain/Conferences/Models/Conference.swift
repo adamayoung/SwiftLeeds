@@ -25,7 +25,6 @@ public struct Conference: Identifiable {
     ///
     public let location: String
 
-
     /// 
     /// Create a conference object.
     ///

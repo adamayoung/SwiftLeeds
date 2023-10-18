@@ -7,6 +7,7 @@ final class SwiftLeedsStoreTests: XCTestCase {
         let store = SwiftLeedsStore()
 
         XCTAssertEqual(store.conferences, ConferenceState())
+        XCTAssertEqual(store.schedules, ScheduleState())
         XCTAssertEqual(store.pointsOfInterest, PointOfInterestState())
         XCTAssertEqual(store.sponsors, SponsorState())
     }

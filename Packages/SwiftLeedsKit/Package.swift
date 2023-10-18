@@ -29,10 +29,19 @@ let package = Package(
         .testTarget(name: "SwiftLeedsKitTests", dependencies: ["SwiftLeedsKit"]),
 
         .target(name: "SwiftLeedsDomain"),
-        .testTarget(name: "SwiftLeedsDomainTests", dependencies: ["SwiftLeedsDomain"]),
+        .testTarget(
+            name: "SwiftLeedsDomainTests",
+            dependencies: ["SwiftLeedsDomain"]
+        ),
 
         .target(name: "SwiftLeedsData"),
-        .testTarget(name: "SwiftLeedsDataTests", dependencies: ["SwiftLeedsData"]),
+        .testTarget(
+            name: "SwiftLeedsDataTests",
+            dependencies: ["SwiftLeedsData"],
+            resources: [
+                .process("Resources")
+            ]
+        ),
 
         .target(name: "Networking"),
         .testTarget(name: "NetworkingTests", dependencies: ["Networking"])

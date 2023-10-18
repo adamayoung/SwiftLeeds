@@ -23,7 +23,7 @@ func conferenceInterceptor(
             return nil
         }
 
-        let conferences =  conferenceModels.compactMap(Conference.init)
+        let conferences = conferenceModels.compactMap(Conference.init)
 
         return .setConferences(conferences)
 

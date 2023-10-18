@@ -5,7 +5,6 @@ import Foundation
 ///
 public protocol HTTPClient {
 
-
     /// 
     /// Performs an HTTP GET request.
     ///

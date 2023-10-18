@@ -19,9 +19,7 @@ final class PointOfInterestDataSourceAdapater: PointOfInterestDataSource {
     }
 
     func venue() async throws -> SwiftLeedsDomain.PointOfInterest? {
-        guard let locationDataModel = try await locationRepository.venueLocation() else {
-            return nil
-        }
+        let locationDataModel = try await locationRepository.venueLocation()
 
         let venue = pointOfInterestMapper.map(location: locationDataModel)
 
