@@ -1,6 +1,7 @@
 import Foundation
 import SwiftLeedsKit
 
+#if os(macOS)
 enum Panel: Hashable {
 
     case conference
@@ -10,3 +11,4 @@ enum Panel: Hashable {
     case pastConference(Conference)
 
 }
+#endif

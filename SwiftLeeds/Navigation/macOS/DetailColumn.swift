@@ -1,6 +1,7 @@
 import SwiftLeedsKit
 import SwiftUI
 
+#if os(macOS)
 struct DetailColumn: View {
 
     @Binding var selection: Panel
@@ -58,3 +59,4 @@ struct DetailColumn: View {
     }
 
 }
+#endif
