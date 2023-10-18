@@ -5,7 +5,10 @@ import SwiftUI
 struct ContentView: View {
 
     @Environment(SwiftLeedsStore.self) private var store
+
+    #if os(macOS)
     @State private var selection: Panel = .conference
+    #endif
 
     private var isReady: Bool {
         store.isReady
