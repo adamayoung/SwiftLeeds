@@ -18,7 +18,6 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:SwiftLeeds.xcodeproj",
         "identifier" : "6648699D2AD6BC9F00AA1F58",
@@ -26,7 +25,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Packages\/SwiftLeedsKit",
         "identifier" : "SwiftLeedsKitTests",
@@ -34,7 +32,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Packages\/SwiftLeedsKit",
         "identifier" : "SwiftLeedsDomainTests",
@@ -42,7 +39,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Packages\/SwiftLeedsKit",
         "identifier" : "SwiftLeedsDataTests",

@@ -348,6 +348,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				66A345D92AE05E3C00CAAAD8 /* PBXTargetDependency */,
 			);
 			name = SwiftLeeds;
 			packageProductDependencies = (
@@ -528,6 +529,10 @@
 			isa = PBXTargetDependency;
 			target = 6648698A2AD6BC9E00AA1F58 /* SwiftLeeds */;
 			targetProxy = 664869A92AD6BC9F00AA1F58 /* PBXContainerItemProxy */;
+		};
+		66A345D92AE05E3C00CAAAD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 66A345D82AE05E3C00CAAAD8 /* SwiftLeedsKit */;
 		};
 /* End PBXTargetDependency section */
 
@@ -877,6 +882,10 @@
 			productName = NukeUI;
 		};
 		66A2B9132AD8849D0072DCE1 /* SwiftLeedsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftLeedsKit;
+		};
+		66A345D82AE05E3C00CAAAD8 /* SwiftLeedsKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftLeedsKit;
 		};
