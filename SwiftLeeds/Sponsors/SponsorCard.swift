@@ -65,7 +65,7 @@ struct SponsorCard: View {
             if !sponsor.jobs.isEmpty {
                 Divider()
 
-                Text("Jobs")
+                Text("JOBS")
                     .font(.callout)
             }
         }

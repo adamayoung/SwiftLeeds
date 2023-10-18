@@ -22,7 +22,8 @@ let package = Package(
             name: "SwiftLeedsKit",
             dependencies: [
                 "SwiftLeedsDomain",
-                "SwiftLeedsData"
+                "SwiftLeedsData",
+                "Networking"
             ]
         ),
         .testTarget(name: "SwiftLeedsKitTests", dependencies: ["SwiftLeedsKit"]),
@@ -31,7 +32,10 @@ let package = Package(
         .testTarget(name: "SwiftLeedsDomainTests", dependencies: ["SwiftLeedsDomain"]),
 
         .target(name: "SwiftLeedsData"),
-        .testTarget(name: "SwiftLeedsDataTests", dependencies: ["SwiftLeedsData"])
+        .testTarget(name: "SwiftLeedsDataTests", dependencies: ["SwiftLeedsData"]),
+
+        .target(name: "Networking"),
+        .testTarget(name: "NetworkingTests", dependencies: ["Networking"])
     ]
 
 )

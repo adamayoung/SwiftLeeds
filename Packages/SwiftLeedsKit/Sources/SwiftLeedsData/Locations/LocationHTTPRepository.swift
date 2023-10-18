@@ -16,21 +16,45 @@ public class LocationHTTPRepository: LocationRepository {
         self.decoder = decoder
     }
 
-    public func venueLocation() async throws -> LocationDataModel? {
-        let data = try await httpClient.get(url: Self.localURL)
-
-        let response = try decoder.decode(LocationsResponse.self, from: data)
-        guard let venueGroup = response.data.first(where: { $0.name == "SwiftLeeds" }) else {
-            return nil
+    public func venueLocation() async throws -> LocationDataModel {
+        let data: Data
+        do {
+            data = try await httpClient.get(url: Self.localURL)
+        } catch let error {
+            throw LocationRepositoryError(error: error)
         }
 
-        return venueGroup.locations.first
+        let response: LocationsResponse
+        do {
+            response = try decoder.decode(LocationsResponse.self, from: data)
+        } catch let error {
+            throw LocationRepositoryError.decode(error)
+        }
+
+        guard
+            let venueGroup = response.data.first(where: { $0.name == "SwiftLeeds" }),
+            let location = venueGroup.locations.first
+        else {
+            throw LocationRepositoryError.notFound
+        }
+
+        return location
     }
 
     public func locationGroups() async throws -> [LocationGroupDataModel] {
-        let data = try await httpClient.get(url: Self.localURL)
+        let data: Data
+        do {
+            data = try await httpClient.get(url: Self.localURL)
+        } catch let error {
+            throw LocationRepositoryError(error: error)
+        }
 
-        let response = try decoder.decode(LocationsResponse.self, from: data)
+        let response: LocationsResponse
+        do {
+            response = try decoder.decode(LocationsResponse.self, from: data)
+        } catch let error {
+            throw LocationRepositoryError.decode(error)
+        }
 
         return response.data
     }

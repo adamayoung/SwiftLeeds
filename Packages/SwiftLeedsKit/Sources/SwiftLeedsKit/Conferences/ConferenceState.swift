@@ -3,17 +3,24 @@ import Foundation
 public struct ConferenceState: Equatable {
 
     public internal(set) var current: Conference?
-    public internal(set) var schedule: Schedule?
-    public internal(set) var speakers: [Speaker]
+    public internal(set) var all: [Conference]
+
+    public var pastConferences: [Conference] {
+        guard let current else {
+            return []
+        }
+
+        return all.filter { conference in
+            conference.date < current.date
+        }
+    }
 
     public init(
         current: Conference? = nil,
-        schedule: Schedule? = nil,
-        speakers: [Speaker] = []
+        all: [Conference] = []
     ) {
         self.current = current
-        self.schedule = schedule
-        self.speakers = speakers
+        self.all = all
     }
 
 }
@@ -23,8 +30,7 @@ extension ConferenceState {
     public static var preview: ConferenceState {
         ConferenceState(
             current: Conference.preview,
-            schedule: Schedule.preview,
-            speakers: Speaker.previews
+            all: Conference.previews
         )
     }
 

@@ -9,7 +9,7 @@ struct Sidebar: View {
         List(selection: $selection) {
             Section {
                 NavigationLink(value: Panel.conference) {
-                    Label("Schedule", systemImage: "wallet.pass")
+                    Label("SCHEDULE", systemImage: "wallet.pass")
                 }
 
                 NavigationLink(value: Panel.speakers) {

@@ -12,8 +12,8 @@ public final class FetchCurrentConference: FetchCurrentConferenceUseCase {
         let conference: Conference?
         do {
             conference = try await conferenceDataSource.currentConference()
-        } catch {
-            return nil
+        } catch let error {
+            throw FetchConferencesError(error: error)
         }
 
         return conference

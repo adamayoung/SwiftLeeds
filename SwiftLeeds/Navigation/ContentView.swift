@@ -8,7 +8,7 @@ struct ContentView: View {
     @AppStorage("selectedPanel") private var selection: Panel = Panel.conference
 
     private var isReady: Bool {
-        store.conferences.current != nil
+        store.isReady
     }
 
     var body: some View {

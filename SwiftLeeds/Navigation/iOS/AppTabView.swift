@@ -3,12 +3,17 @@ import SwiftUI
 
 struct AppTabView: View {
 
+    @Environment(SwiftLeedsStore.self) private var store
     @AppStorage("selectedTab") private var selectedTab: Tab = .conference
+
+    private var currentConference: Conference? {
+        store.conferences.current
+    }
 
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack {
-                ScheduleView()
+                ScheduleView(conference: currentConference)
                     .navigationDestination(for: Presentation.self) { presentation in
                         PresentationView(presentation: presentation)
                     }
@@ -25,7 +30,7 @@ struct AppTabView: View {
             .tag(Tab.conference)
 
             NavigationStack {
-                SpeakersView()
+                SpeakersView(conference: currentConference)
                     .navigationDestination(for: Speaker.self) { speaker in
                         SpeakerView(speaker: speaker)
                     }
@@ -48,6 +53,26 @@ struct AppTabView: View {
                 Label("SPONSORS", systemImage: "wand.and.stars")
             }
             .tag(Tab.sponsors)
+
+            NavigationStack {
+                BrowseView()
+                    .navigationDestination(for: Conference.self) { conference in
+                        ScheduleView(conference: conference)
+                    }
+                    .navigationDestination(for: Presentation.self) { presentation in
+                        PresentationView(presentation: presentation)
+                    }
+                    .navigationDestination(for: Activity.self) { activity in
+                        ActivityView(activity: activity)
+                    }
+                    .navigationDestination(for: Speaker.self) { speaker in
+                        SpeakerView(speaker: speaker)
+                    }
+            }
+            .tabItem {
+                Label("BROWSE", systemImage: "square.stack.fill")
+            }
+            .tag(Tab.browse)
         }
     }
 
@@ -60,6 +85,7 @@ extension AppTabView {
         case speakers
         case map
         case sponsors
+        case browse
     }
 
 }

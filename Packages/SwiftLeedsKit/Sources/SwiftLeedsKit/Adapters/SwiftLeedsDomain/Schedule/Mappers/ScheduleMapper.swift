@@ -67,12 +67,20 @@ extension ScheduleMapper {
             return nil
         }
 
+        let slidoURL: URL? = {
+            guard !presentation.slidoURL.isEmpty else {
+                return nil
+            }
+
+            return URL(string: presentation.slidoURL)
+        }()
+
         return SwiftLeedsDomain.Presentation(
             id: presentation.id,
             title: presentation.title,
             synopsis: presentation.synopsis,
             speaker: speaker,
-            slidoURL: presentation.slidoURL
+            slidoURL: slidoURL
         )
     }
 

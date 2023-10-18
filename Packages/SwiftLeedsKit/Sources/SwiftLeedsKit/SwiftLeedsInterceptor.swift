@@ -15,6 +15,15 @@ func swiftLeedsInterceptor(
 
         return .conferences(action)
 
+    case .schedules(let action):
+        let newAction = await scheduleInterceptor(state: state.schedules, action: action,
+                                                    dependencies: dependencies)
+        guard let action = newAction else {
+            return nil
+        }
+
+        return .schedules(action)
+
     case .pointsOfInterest(let action):
         let newAction = await pointOfInterestInterceptor(state: state.pointsOfInterest, action: action,
                                                          dependencies: dependencies)

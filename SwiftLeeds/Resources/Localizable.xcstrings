@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "BROWSE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse"
+          }
+        }
+      }
+    },
     "CLOSE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -34,8 +45,16 @@
         }
       }
     },
-    "Jobs" : {
-
+    "JOBS" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jobs"
+          }
+        }
+      }
     },
     "MAP" : {
       "extractionState" : "manual",
@@ -68,9 +87,6 @@
           }
         }
       }
-    },
-    "Schedule" : {
-
     },
     "SCHEDULE" : {
       "extractionState" : "manual",

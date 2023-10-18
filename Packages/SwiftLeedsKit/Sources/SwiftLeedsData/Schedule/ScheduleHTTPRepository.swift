@@ -23,9 +23,34 @@ public final class ScheduleHTTPRepository: ScheduleRepository {
     }
 
     public func schedule(forEvent eventID: UUID?) async throws -> ScheduleDataModel {
-        let data = try await httpClient.get(url: Self.scheduleURL)
+        var baseURL = Self.scheduleURL
+        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else {
+            throw ScheduleRepositoryError.unknown()
+        }
 
-        let response = try decoder.decode(ScheduleResponse.self, from: data)
+        var queryItems = urlComponents.queryItems ?? []
+        if let eventID {
+            queryItems.append(URLQueryItem(name: "event", value: eventID.uuidString))
+        }
+        urlComponents.queryItems = queryItems
+        
+        guard let url = urlComponents.url else {
+            throw ScheduleRepositoryError.unknown()
+        }
+
+        let data: Data
+        do {
+            data = try await httpClient.get(url: url)
+        } catch let error {
+            throw ScheduleRepositoryError(error: error)
+        }
+
+        let response: ScheduleResponse
+        do {
+            response = try decoder.decode(ScheduleResponse.self, from: data)
+        } catch let error {
+            throw ScheduleRepositoryError.decode(error)
+        }
 
         return response.data
     }

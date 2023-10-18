@@ -3,12 +3,18 @@ import SwiftUI
 
 struct SpeakersView: View {
 
+    var conference: Conference?
+
     @Environment(SwiftLeedsStore.self) private var store
 
     private let columns = [GridItem(.flexible()), GridItem(.flexible())]
 
     private var speakers: [Speaker] {
-        store.conferences.speakers
+        guard let conference else {
+            return []
+        }
+
+        return store.schedules.speakers[conference.id] ?? []
     }
 
     var body: some View {
@@ -24,7 +30,11 @@ struct SpeakersView: View {
             }
         }
         .task {
-            await store.send(.conferences(.fetchSpeakers))
+            guard let conference else {
+                return
+            }
+
+            await store.send(.schedules(.fetchSpeakers(conferenceID: conference.id)))
         }
         .navigationTitle("SPEAKERS")
     }
@@ -35,7 +45,7 @@ struct SpeakersView: View {
     let store = SwiftLeedsStore.preview
 
     return NavigationStack {
-        SpeakersView()
+        SpeakersView(conference: .preview)
             .environment(store)
     }
 }

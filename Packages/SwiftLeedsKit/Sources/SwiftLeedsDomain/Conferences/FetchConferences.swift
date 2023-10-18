@@ -12,11 +12,12 @@ public final class FetchConferences: FetchConferencesUseCase {
         let conferences: [Conference]
         do {
             conferences = try await conferenceDataSource.conferences()
-        } catch {
-            return []
+        } catch let error {
+            throw FetchConferencesError(error: error)
         }
 
-        return conferences
+        let sortedConferences = conferences.sorted { $0.date > $1.date }
+        return sortedConferences
     }
 
 }
