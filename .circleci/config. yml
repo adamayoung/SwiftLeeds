@@ -1,0 +1,19 @@
+# .circleci/config.yml
+version: 2.1
+jobs:
+  build-and-test:
+    macos:
+      xcode: 15.0.0
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: xcodebuild build-for-testing -scheme SwiftLeeds -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+      - run:
+          name: Test
+          command: xcodebuild test-without-building -scheme SwiftLeeds -testPlan SwiftLeeds -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+
+workflows:
+  build-test-adhoc:
+    jobs:
+      - build-and-test
